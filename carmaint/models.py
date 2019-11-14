@@ -14,19 +14,11 @@ class Car(models.Model):
 
 class Maintenance(models.Model):
     desc = models.CharField(default = '', max_length = 500)
-    parts_cost = models.DecimalField(default='0.00', max_digits=8, decimal_places=2)
-    labor_cost = models.DecimalField(default='0.00', max_digits=8, decimal_places=2)
     total_cost = models.DecimalField(default='0.00', max_digits=8, decimal_places=2)
     mileage = models.PositiveIntegerField(default='0')
-    oil_change = models.BooleanField(default=False)
     notes = models.TextField(default="", blank=True)
-    invoice_img = models.CharField(default = '', blank=True, max_length = 512)
-
+    invoice_img = models.CharField(default = '', blank=True, max_length = 600)
     car = models.ForeignKey(Car, default = '', on_delete = 'CASCADE', related_name = 'maintenances')
 
     def __str__(self):
         return f"{self.desc} for {self.car.model}"
-
-    @property
-    def get_total_price(self):
-        return self.parts_cost+self.labor_cost

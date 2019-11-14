@@ -23,6 +23,10 @@ class MaintenanceSerializer(serializers.HyperlinkedModelSerializer):
         read_only=True
     )
 
+    maintenance_url = serializers.ModelSerializer.serializer_url_field(
+        view_name='maintenance_detail'
+    )
+
     class Meta:
         model = Maintenance
-        fields = ('id', 'desc', 'parts_cost', 'labor_cost', 'total_cost', 'mileage', 'oil_change', 'notes', 'invoice_img', 'car',)
+        fields = ('id', 'maintenance_url', 'desc', 'total_cost', 'mileage', 'notes', 'invoice_img', 'car',)
