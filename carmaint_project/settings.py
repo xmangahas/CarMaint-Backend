@@ -26,7 +26,7 @@ SECRET_KEY = 'gl7r@%g)iucgqf0n)u+d*5e-o8fapfyk-l0#yz%-jm$u(u^urs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['carmaint-backend.herokuapp.com']
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
