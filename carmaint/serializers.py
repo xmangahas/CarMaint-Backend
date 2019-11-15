@@ -29,4 +29,4 @@ class MaintenanceSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Maintenance
-        fields = ('id', 'maintenance_url', 'desc', 'total_cost', 'mileage', 'notes', 'invoice_img', 'car',)
+        fields = ('id', 'maintenance_url', 'desc', 'date', 'total_cost', 'mileage', 'notes', 'invoice_img', 'car',)

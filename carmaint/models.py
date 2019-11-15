@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 # Create your models here.
 
@@ -14,6 +15,7 @@ class Car(models.Model):
 
 class Maintenance(models.Model):
     desc = models.CharField(default = '', max_length = 500)
+    date = models.DateField(default=date.today)
     total_cost = models.DecimalField(default='0.00', max_digits=8, decimal_places=2)
     mileage = models.PositiveIntegerField(default='0')
     notes = models.TextField(default="", blank=True)
