@@ -1,0 +1,13 @@
+<!-- carmaint/templates/carmaint/car_list.html -->
+{% extends "carmaint/base.html" %}
+
+{% block content %}
+<h2>Cars <a href="{% url 'car_create' %}">(+)</a></h2>
+<ul>
+  {% for car in cars %}
+  <li>
+    <a href="{% url 'car_detail' pk=car.pk %}">{{ car.year }} - {{ car.make }} - {{ car.model }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

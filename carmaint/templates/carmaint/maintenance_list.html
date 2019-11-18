@@ -1,0 +1,13 @@
+
+{% extends "carmaint/base.html" %}
+
+{% block content %}
+<h2>Maintenances <a href="{% url 'maintenance_create' %}">(+)</a></h2>
+<ul>
+  {% for maintenance in maintenances %}
+  <li>
+    <a href="{% url 'maintenance_detail' pk=maintenance.pk %}">{{ maintenance.desc }} -- For {{ maintenance.car.make }} {{ maintenance.car.model }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
