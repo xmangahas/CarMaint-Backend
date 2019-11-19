@@ -1,13 +1,13 @@
 {% extends "carmaint/base.html" %}
 
 {% block content %}
-<h2>{{ maintenance.desc }}<a href="{% url 'maintenance_edit' pk=maintenance.pk %}">(edit)</a><a href="{% url 'maintenance_delete' pk=maintenance.pk %}" onclick="return confirm('Are you sure you want to delete this?')"> (delete)</a></h2>
-<h3>For <a href="{% url 'car_detail' pk=maintenance.car.pk %}">{{ maintenance.car.make }} {{ maintenance.car.model }}</a></h3>
-<h4>Date:  {{ maintenance.date }}</h4>
-<h4>Total Cost:  {{ maintenance.total_cost }}</h4>
-<h4>Mileage:  {{ maintenance.mileage }}</h4>
-<h4>Notes:  {{ maintenance.notes }}</h4>
-<h4>Invoice: </h4>
+<h3>{{ maintenance.desc }}<a class="edit" href="{% url 'maintenance_edit' pk=maintenance.pk %}">(edit)</a><a class="delete" href="{% url 'maintenance_delete' pk=maintenance.pk %}" onclick="return confirm('Are you sure you want to delete this?')"> (delete)</a></h3>
+<h4>For <a href="{% url 'car_detail' pk=maintenance.car.pk %}">{{ maintenance.car.make }} {{ maintenance.car.model }}</a></h4>
+<h5>Date:  {{ maintenance.date }}</h5>
+<h5>Total Cost:  {{ maintenance.total_cost }}</h5>
+<h5>Mileage:  {{ maintenance.mileage }}</h5>
+<h5>Notes:  {{ maintenance.notes }}</h5>
+<h5>Invoice: </h5>
 <img src="{{ maintenance.invoice_img }}" class = "invoice-image" alt="invoice image">
 
 {% endblock %}

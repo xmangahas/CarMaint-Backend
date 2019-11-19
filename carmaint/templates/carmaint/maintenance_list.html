@@ -2,7 +2,7 @@
 {% extends "carmaint/base.html" %}
 
 {% block content %}
-<h2>Maintenances <a href="{% url 'maintenance_create' %}">(+)</a></h2>
+<h2>Maintenances <a href="{% url 'maintenance_create' %}">(Add New Maintenance)</a></h2>
 <ul>
   {% for maintenance in maintenances %}
   <li>

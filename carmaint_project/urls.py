@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('carmaint.urls')),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
+    path('', include('accounts.urls')),
+    path('oauth/', include('social_django.urls', namespace='social')),
 ]

@@ -28,6 +28,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['carmaint-backend.herokuapp.com']
 
+# Application definition
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/'
+
+SOCIAL_AUTH_GITHUB_KEY = '1e0f8dc903d3ac9f7325'
+SOCIAL_AUTH_GITHUB_SECRET = 'e1ddd90fc8466894c39856919bb7d399256cb119'
+
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
@@ -35,6 +43,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny'
     ]
 }
+
+LOGIN_REDIRECT_URL = '/'
 
 # Application definition
 
@@ -48,6 +58,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'carmaint',
+    'accounts',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +73,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -78,10 +91,20 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 WSGI_APPLICATION = 'carmaint_project.wsgi.application'
 

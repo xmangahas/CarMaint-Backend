@@ -2,7 +2,7 @@
 {% extends "carmaint/base.html" %}
 
 {% block content %}
-<h2>Cars <a href="{% url 'car_create' %}">(+)</a></h2>
+<h2>Cars <a href="{% url 'car_create' %}">(Add New Car)</a></h2>
 <ul>
   {% for car in cars %}
   <li>
