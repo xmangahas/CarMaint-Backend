@@ -59,8 +59,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'carmaint',
     'accounts',
-    'social.apps.django_app.default',
     'social-auth-app-django',
+    'python-social-auth'
 ]
 
 MIDDLEWARE = [
