@@ -5,7 +5,9 @@
     * I approached this project by thinking of something that I needed.  When performing maintenance on an automobile, it is useful to be able to record the details like date, mileage, price and invoice.
 
 * Brief Example:
-
+    * ![Homepage screenshot](https://i.imgur.com/zSR2JPx.png)
+    * ![Car page screenshot](https://i.imgur.com/xNuDvTq.png)
+    * ![Maintenance page screenshot](https://i.imgur.com/3YbBSef.png)
 
 * List of features:
     * Full CRUD functionality
