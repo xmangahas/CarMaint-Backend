@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'carmaint',
     'accounts',
-    'social_django',
+    # 'social_django',
 ]
 
 MIDDLEWARE = [
