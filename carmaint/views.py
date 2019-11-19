@@ -63,12 +63,12 @@ def maintenance_create(request):
 def maintenance_edit(request, pk):
     maintenance = Maintenance.objects.get(pk=pk)
     if request.method == "POST":
-        form = maintenanceForm(request.POST, instance=maintenance)
+        form = MaintenanceForm(request.POST, instance=maintenance)
         if form.is_valid():
             maintenance = form.save()
             return redirect('car_detail', pk=maintenance.car.pk)
     else:
-        form = maintenanceForm(instance=maintenance)
+        form = MaintenanceForm(instance=maintenance)
     return render(request, 'carmaint/maintenance_form.html', {'form': form})
 
 def maintenance_delete(request, pk):
