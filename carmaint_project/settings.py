@@ -59,8 +59,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'carmaint',
     'accounts',
-    'social-auth-app-django',
-    'python-social-auth'
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -74,7 +73,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
