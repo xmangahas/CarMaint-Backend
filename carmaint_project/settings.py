@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'carmaint',
     'accounts',
     'social_django',
+    'social.apps.django_app.default',
+    'social-auth-app-django',
 ]
 
 MIDDLEWARE = [
